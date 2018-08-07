@@ -1,11 +1,11 @@
 <div class="vd_navbar vd_nav-width vd_navbar-tabs-menu vd_navbar-left  ">
     
     <div class="navbar-menu clearfix">
-        <div class="vd_panel-menu hidden-xs">
+        <!-- <div class="vd_panel-menu hidden-xs">
             <span data-original-title="Expand All" data-toggle="tooltip" data-placement="bottom" data-action="expand-all" class="menu" data-intro="<strong>Expand Button</strong><br/>To expand all menu on left navigation menu." data-step=4 >
                 <i class="fa fa-sort-amount-asc"></i>
             </span>                   
-        </div>
+        </div> -->
         <h3 class="menu-title hide-nav-medium hide-nav-small">Side bar</h3>
         <div class="vd_menu">
             <ul>
@@ -15,14 +15,7 @@
                         <span class="menu-text">Dashboard</span>  
                     </a> 
                 </li>
-                
-                <li>
-                    <a href="email.html">
-                        <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
-                        <span class="menu-text">Apportment</span>  
-                    </a> 
-                </li>
-                
+
                 <li>
                     <a href="email.html">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
@@ -36,6 +29,12 @@
                         <span class="menu-text">Slider</span>  
                     </a> 
                 </li>
+                <li>
+                    <a href="email.html">
+                        <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
+                        <span class="menu-text">Logo</span>  
+                    </a> 
+                </li>
 
                 <li>
                     <a href="email.html">
@@ -46,14 +45,33 @@
                 <li>
                     <a href="email.html">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
-                        <span class="menu-text">Team List</span>  
+                        <span class="menu-text">News & Event</span>  
                     </a> 
                 </li>
 
                 <li>
                     <a href="email.html">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
-                        <span class="menu-text">Portfolio</span>  
+                        <span class="menu-text">Other Bussnies</span>  
+                    </a> 
+                </li>
+                <li>
+                    <a href="email.html">
+                        <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
+                        <span class="menu-text">MemberShip</span>  
+                    </a> 
+                </li>
+                <li>
+                    <a href="email.html">
+                        <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
+                        <span class="menu-text">Printing Materials</span>  
+                    </a> 
+                </li>
+
+                <li>
+                    <a href="email.html">
+                        <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
+                        <span class="menu-text">About Us</span>  
                     </a> 
                 </li>
 
@@ -64,7 +82,7 @@
                     </a> 
                 </li>
 
-                <li>
+                <!-- <li>
                     <a href="javascript:void(0);" data-action="click-trigger">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
                         <span class="menu-text">Left Menu</span>  
@@ -76,43 +94,10 @@
                                 <a href="index.html">
                                     <span class="menu-text">About Dr. Nasir</span>  
                                 </a>
-                            </li>              
-                            <li>
-                                <a href="index-ecommerce.html">
-                                    <span class="menu-text">Involvement</span>  
-                                </a>
-                            </li> 
-                            <li>
-                                <a href="index-analytics.html">
-                                    <span class="menu-text">Presentations</span>  
-                                </a>
-                            </li> 
-                            <li>
-                                <a href="index-blogging.html">
-                                    <span class="menu-text">Publications</span>  
-                                </a>
-                            </li> 
-                            <li>
-                                <a href="index-blogging.html">
-                                    <span class="menu-text">Social Work</span>  
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index-blogging.html">
-                                    <span class="menu-text">Specialization</span>  
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="index-blogging.html">
-                                    <span class="menu-text">Who we are</span>  
-                                </a>
-                            </li>
-
-                                                                                                                              
+                            </li>                                                                                                         
                         </ul>   
                     </div>
-                </li>  
+                </li>   -->
                        
                   
 

@@ -1,7 +1,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Login Pages HTML Template - Responsive Multipurpose Admin Templates | Vendroid</title>
+    <title><?php if(isset($title)&& $title){echo $title.' | Macca Digital';}else{ echo 'Macca Digital';}?></title>
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
 
