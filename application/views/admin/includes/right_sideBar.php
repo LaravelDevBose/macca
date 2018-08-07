@@ -40,7 +40,7 @@
                 <li class="group-heading vd_bg-black-20">FAVORITE</li>
                 <li>  
                     <a href="#"> 
-                        <div class="menu-icon"><img src="<?= base_url();?>libs/img/avatar/avatar.jpg" alt="example image"></div> 
+                        <div class="menu-icon"><img src="<?= base_url();?>libs/backEnd/img/avatar/avatar.jpg" alt="example image"></div> 
                         <div class="menu-text">Jessylin
                             <div class="menu-info">
                                 <span class="menu-date">Administrator </span>                                                         
@@ -51,7 +51,7 @@
                 </li>
                 <li>  
                     <a href="#"> 
-                        <div class="menu-icon"><img src="<?= base_url();?>libs/img/avatar/avatar-2.jpg" alt="example image"></div> 
+                        <div class="menu-icon"><img src="<?= base_url();?>libs/backEnd/img/avatar/avatar-2.jpg" alt="example image"></div> 
                         <div class="menu-text">Rodney Mc.Cardo
                             <div class="menu-info">
                                 <span class="menu-date">Designer </span>                                                         
@@ -62,7 +62,7 @@
                 </li>
                 <li>  
                     <a href="#"> 
-                        <div class="menu-icon"><img src="<?= base_url();?>libs/img/avatar/avatar-3.jpg" alt="example image"></div> 
+                        <div class="menu-icon"><img src="<?= base_url();?>libs/backEnd/img/avatar/avatar-3.jpg" alt="example image"></div> 
                         <div class="menu-text">Theresia Minoque
                             <div class="menu-info">
                                 <span class="menu-date">Engineering </span>                                                         
@@ -74,7 +74,7 @@
                 <li class="group-heading vd_bg-black-20">FRIENDS</li>                                                                                                                                 
                 <li>  
                     <a href="#"> 
-                        <div class="menu-icon"><img src="<?= base_url();?>libs/img/avatar/avatar-4.jpg" alt="example image"></div> 
+                        <div class="menu-icon"><img src="<?= base_url();?>libs/backEnd/img/avatar/avatar-4.jpg" alt="example image"></div> 
                         <div class="menu-text">Greg Grog
                             <div class="menu-info">
                                 <span class="menu-date">Developer </span>                                                         
@@ -85,7 +85,7 @@
                 </li> 
                 <li>  
                     <a href="#"> 
-                        <div class="menu-icon"><img src="<?= base_url();?>libs/img/avatar/avatar-5.jpg" alt="example image"></div> 
+                        <div class="menu-icon"><img src="<?= base_url();?>libs/backEnd/img/avatar/avatar-5.jpg" alt="example image"></div> 
                         <div class="menu-text">Stefanie Imburgh
                             <div class="menu-info">
                                 <span class="menu-date">Dancer</span>                                                         
@@ -96,7 +96,7 @@
                 </li> 
                 <li>  
                     <a href="#"> 
-                        <div class="menu-icon"><img src="<?= base_url();?>libs/img/avatar/avatar-6.jpg" alt="example image"></div> 
+                        <div class="menu-icon"><img src="<?= base_url();?>libs/backEnd/img/avatar/avatar-6.jpg" alt="example image"></div> 
                         <div class="menu-text">Matt Demon
                             <div class="menu-info">
                                 <span class="menu-date">Musician </span>                                                         
@@ -107,7 +107,7 @@
                 </li>
                 <li>  
                     <a href="#"> 
-                        <div class="menu-icon"><img src="<?= base_url();?>libs/img/avatar/avatar-7.jpg" alt="example image"></div> 
+                        <div class="menu-icon"><img src="<?= base_url();?>libs/backEnd/img/avatar/avatar-7.jpg" alt="example image"></div> 
                         <div class="menu-text">Jeniffer Anastasia
                             <div class="menu-info">
                                 <span class="menu-date">Senior Developer </span>                                                         
@@ -118,7 +118,7 @@
                 </li>                    
                 <li>  
                     <a href="#"> 
-                        <div class="menu-icon"><img src="<?= base_url();?>libs/img/avatar/avatar-8.jpg" alt="example image"></div> 
+                        <div class="menu-icon"><img src="<?= base_url();?>libs/backEnd/img/avatar/avatar-8.jpg" alt="example image"></div> 
                         <div class="menu-text">Daniel Dreamon
                             <div class="menu-info">
                                 <span class="menu-date">Sales Executive </span>                                                         

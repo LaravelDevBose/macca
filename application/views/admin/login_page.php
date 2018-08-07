@@ -22,7 +22,7 @@
                         <div class="vd_login-page" style="background: #26e6d66e;">
                             <div class="heading clearfix" >
                                 <div class="logo" style="margin-top: 15px;">
-                                    <h2 class="mgbt-xs-5"><img src="<?= base_url(); ?>libs/images/logo.png" alt="logo" style="height: 100px; "></h2>
+                                    <h2 class="mgbt-xs-5"><img src="<?= base_url(); ?>libs/backEnd/images/logo.png" alt="logo" style="height: 100px; "></h2>
                                 </div>
                                 <h4 class="text-center font-semibold vd_grey">LOGIN TO YOUR ACCOUNT</h4>
                             </div>
