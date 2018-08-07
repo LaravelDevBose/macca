@@ -42,28 +42,60 @@ $route['admin/login/check'] = 'Admin/login_data_check';
 $route['admin/logout'] = 'Admin/logout';
 
 /*---------- Admin Dashboard ----------*/
-$route['dashboard'] = 'Dashboard/index';
+$route['dashboard'] = 'Dashboard/index'; 
 
 
+/*------- Gallary Image ----------*/
+$route['gallery_page'] = 'Gallary/gallery_page_view';
+$route['gallary_image_store'] = 'Gallary/gallary_image_store';
+$route['gallery_image_delete/(:any)'] = 'Gallary/gallery_image_delete/$1';
 
-/* --------- Template Route ----------*/
-$route['template/about'] = 'Template/about_info';
-$route['about_us'] = 'Template/about_us';
-$route['address'] = 'Template/address';
-$route['phone'] = 'Template/phone_number';
-$route['email'] = 'Template/email_address';
-$route['wellcome_note'] = 'Template/wellcome_note_page';
-$route['wellcome_note/update'] = 'Template/wellcome_note_update';
-$route['md_message'] = 'Template/md_message_page';
-$route['md_message/update'] = 'Template/md_message_update';
-$route['rgards_page'] = 'Template/rgards_page';
-$route['rgards/update'] = 'Template/regards_update';
 
 
 /* --------- Slider Route ----------*/
 $route['sliders'] = 'Slider/slider_page';
 $route['slider/store'] = 'Slider/slider_image_store';
 $route['slider/delete/(:any)'] = 'Slider/slider_image_delete/$1';
+
+
+/*------- Logo Route -------------*/
+
+
+
+
+/*----------- Service and Price route----------*/
+$route['service_page'] = 'Service/service_price_page';
+
+
+
+/*------- News and Event Route -----------*/
+$route['event_page'] = 'Event/event_page_view';
+$route['event/create'] = 'Event/event_insert_page';
+$route['event/store'] = 'Event/news_and_event_store';
+$route['event/edit/(:any)'] = 'Event/news_and_event_edit/$1';
+$route['event/update/(:any)'] = 'Event/news_and_event_update/$1';
+$route['event/delete/(:any)'] = 'Event/news_and_event_delete/$1';
+
+
+
+/*--------- Other Bussnies----------*/
+
+
+
+/*------- Member List Route ---------*/
+$route['member_list'] = 'Page/member_list_page';
+
+
+
+/*--------- printing Materials----------*/
+
+
+
+/* --------- Template Route ----------*/
+$route['about_insert_page'] = 'Page/about_us_page';
+$route['about_us/update'] = 'Page/about_us_update';
+$route['contact_us_page'] = 'Page/contact_us_page';
+$route['contact_us/update'] = 'Page/contact_us_update';
 
 
 /*----------- New Admin Route----------*/
@@ -78,9 +110,3 @@ $route['password/check'] = 'Sub_admin/old_password_check';
 
 /*---------- News Event ------------------*/
 
-$route['news_and_event'] = 'NewsAndEvent/news_and_event_page';
-$route['news/create'] = 'NewsAndEvent/news_and_event_create_page';
-$route['event/store'] = 'NewsAndEvent/news_and_event_store';
-$route['event/edit/(:any)'] = 'NewsAndEvent/news_and_event_edit/$1';
-$route['event/update/(:any)'] = 'NewsAndEvent/news_and_event_update/$1';
-$route['event/delete/(:any)'] = 'NewsAndEvent/news_and_event_delete/$1';

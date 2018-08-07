@@ -133,17 +133,36 @@
 
 <script type="text/javascript" src="<?= base_url();?>/libs/backEnd/js/theme.js"></script>
 <script type="text/javascript" src="<?= base_url();?>/libs/backEnd/custom/custom.js"></script>
+<!-- /default js -->
+
+<!-- Data Table Scripts -->
+<script type="text/javascript" src="<?= base_url();?>/libs/backEnd/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        "use strict";
+
+        $('#data-tables').dataTable();
+    });
+</script>
 
 
-<!-- default js -->
+<!-- Input and date time and text editor -->
+<script type="text/javascript" src='<?= base_url();?>/libs/backEnd/plugins/daterangepicker/daterangepicker.js'></script>
+<script type="text/javascript" src='<?= base_url();?>/libs/backEnd/plugins/ckeditor/ckeditor.js'></script>
+<script type="text/javascript" src='<?= base_url();?>/libs/backEnd/plugins/ckeditor/adapters/jquery.js'></script>
+<script type="text/javascript" src="<?= base_url();?>/libs/backEnd/plugins/bootstrap-wysiwyg/js/wysihtml5-0.3.0.min.js"></script>
+<script type="text/javascript" src="<?= base_url();?>/libs/backEnd/plugins/bootstrap-wysiwyg/js/bootstrap-wysihtml5-0.0.2.js"></script>
 
-
-
-
-
-
-
-
+<script>
+    $('#wysiwyghtml').wysihtml5();
+    // date time piker
+    $("#datepicker-icon").datepicker({dateFormat: 'dd M yy'});
+    $('[data-datepicker]').click(function (e) {
+        var data = $(this).data('datepicker');
+        $(data).focus();
+    });
+</script>
 
 
 

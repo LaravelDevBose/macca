@@ -18,7 +18,7 @@
                 <div class="vd_content-wrapper">
                     <div class="vd_container">
                         <div class="vd_content clearfix">
-
+                            
                             <?php $this->load->view('admin/includes/message'); ?>
 
                             <div class="vd_content-section clearfix">

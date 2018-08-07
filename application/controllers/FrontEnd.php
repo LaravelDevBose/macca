@@ -7,30 +7,29 @@ class FrontEnd extends CI_Controller {
 	{
 		parent::__construct();
 
-		$vars['phone'] 		= $this->Page_model->get_phone_info();
-		$vars['email'] 		= $this->Page_model->get_email_info();
-		$vars['logo'] 		= $this->Template_model->get_logo();
-		$vars['about_us'] 	= $this->Page_model->get_about_us_info();
-		$vars['address'] 	= $this->Page_model->get_address_info();
-		$vars['categories'] = $this->Category_model->get_all_category_info();
-		$vars['sliders']	= $this->Slider_model->get_all_slider_data();
-		$vars['ads_images']	= $this->Ads_model->frontend_ads();
-		$vars['md_name']	= $this->Template_model->get_md_name_data(); 
-		$vars['md_desig']	= $this->Template_model->get_md_desig_data(); 
-		$vars['md_image']	= $this->Template_model->get_md_image_data(); 
-		$vars['md_message']	= $this->Template_model->get_md_message_data();
-		$vars['photos']		= $this->Page_model->get_images_for_right_sidebar();
-		$vars['y_videos']	= $this->Page_model->get_limt_video(3); 
-		$this->load->vars( $vars);
+		// $vars['phone'] 		= $this->Page_model->get_phone_info();
+		// $vars['email'] 		= $this->Page_model->get_email_info();
+		// $vars['logo'] 		= $this->Template_model->get_logo();
+		// $vars['about_us'] 	= $this->Page_model->get_about_us_info();
+		// $vars['address'] 	= $this->Page_model->get_address_info();
+		// $vars['categories'] = $this->Category_model->get_all_category_info();
+		// $vars['sliders']	= $this->Slider_model->get_all_slider_data();
+		// $vars['ads_images']	= $this->Ads_model->frontend_ads();
+		// $vars['md_name']	= $this->Template_model->get_md_name_data(); 
+		// $vars['md_desig']	= $this->Template_model->get_md_desig_data(); 
+		// $vars['md_image']	= $this->Template_model->get_md_image_data(); 
+		// $vars['md_message']	= $this->Template_model->get_md_message_data();
+		// $vars['photos']		= $this->Page_model->get_images_for_right_sidebar();
+		// $vars['y_videos']	= $this->Page_model->get_limt_video(3); 
+		// $this->load->vars( $vars);
 	}
 
 	public function index()
 	{	
 		// var_dump($this->Ads_model->middel_ads_data()); exit();
 		$data['title']		='Home Page';
-		$data['page_path']	='frontEnd/home/home';
-		$data['wc_note'] 	= $this->Template_model->get_wellcome_note();
-		$data['products']	= $this->Product_model->get_products_data(9);
+		$data['page_path']	='frontEnd/home/index';
+		
 		$this->load->view('frontEnd/master', $data);
 	}
 

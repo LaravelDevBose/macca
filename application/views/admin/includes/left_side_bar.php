@@ -10,21 +10,21 @@
         <div class="vd_menu">
             <ul>
                 <li>
-                    <a href="email.html">
+                    <a href="<?= base_url();?>dashboard">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
                         <span class="menu-text">Dashboard</span>  
                     </a> 
                 </li>
 
                 <li>
-                    <a href="email.html">
+                    <a href="<?= base_url();?>gallery_page">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
                         <span class="menu-text">Photo Gallary</span>  
                     </a> 
                 </li>
 
                 <li>
-                    <a href="email.html">
+                    <a href="<?= base_url();?>sliders">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
                         <span class="menu-text">Slider</span>  
                     </a> 
@@ -37,13 +37,13 @@
                 </li>
 
                 <li>
-                    <a href="email.html">
+                    <a href="<?= base_url(); ?>service_page">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
                         <span class="menu-text">Service & Price</span>  
                     </a> 
                 </li>
                 <li>
-                    <a href="email.html">
+                    <a href="<?= base_url();?>event_page">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
                         <span class="menu-text">News & Event</span>  
                     </a> 
@@ -56,7 +56,7 @@
                     </a> 
                 </li>
                 <li>
-                    <a href="email.html">
+                    <a href="<?= base_url(); ?>member_list">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
                         <span class="menu-text">MemberShip</span>  
                     </a> 
@@ -69,14 +69,14 @@
                 </li>
 
                 <li>
-                    <a href="email.html">
+                    <a href="<?= base_url();?>about_insert_page">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
                         <span class="menu-text">About Us</span>  
                     </a> 
                 </li>
 
                 <li>
-                    <a href="email.html">
+                    <a href="<?= base_url();?>contact_us_page">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
                         <span class="menu-text">Contact Us</span>  
                     </a> 

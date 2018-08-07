@@ -12,18 +12,14 @@ Class Page extends CI_Controller{
 		}
 	}
 
-	
-	// -----view About Page
-
-	public function contact_us_page()
+	/*========== member List page ===========*/
+	public function member_list_page()
 	{
-		$data['title']='Contact Us';
-		$data['page_path']='admin/pages/contact_us_page';
-		$data['address'] = $this->Page_model->get_address_info();
-		$data['phone'] = $this->Page_model->get_phone_info();
-		$data['email'] = $this->Page_model->get_email_info();
-		$this->load->view('admin/master', $data);
+		$data['title'] 		= 'Member List';
+		$data['page_path'] 	= 'admin/member/member_list';
+		$this->load->view('admin/master', $data); 
 	}
+	
 
 
 	/*============== About Us Pages==============*/
@@ -51,141 +47,37 @@ Class Page extends CI_Controller{
 			if($this->Page_model->insert_or_update_about_us_info()){
 				$data['success'] = 'About Us Info Updated Successfully!';
 				$this->session->set_flashdata($data);
-				redirect('page/about_us_page');
+				redirect('about_insert_page');
 			}else{
 				$data['error'] = 'About Us Info Not Updated Successfully!';
 				$this->session->set_flashdata($data);
-				redirect('page/about_us_page');
+				redirect('about_insert_page');
 			}
 		}
 	}
 
 
-	/*============== Our services Pages==============*/
-	public function our_srvices_page()
+	// -----view About Page
+
+	public function contact_us_page()
 	{
-		$data['title']='Our services';
-		$data['page_path']='admin/pages/service_page';
-		$data['our_service'] = $this->Page_model->get_service_info();
+		$data['title']='Contact Us';
+		$data['page_path']='admin/pages/contact_us_page';
+		$data['address'] = $this->Page_model->get_address_info();
+		$data['phone'] = $this->Page_model->get_phone_info();
+		$data['email'] = $this->Page_model->get_email_info();
 		$this->load->view('admin/master', $data);
 	}
-
-
-	/*============ about us info update =============*/
-	public function our_services_update()
-	{
-		if($this->Page_model->insert_or_update_service_info()){
-			$data['success'] = 'Updated Successfully!';
-			$this->session->set_flashdata($data);
-			redirect('page/service_page');
-		}else{
-			$data['error'] = 'Updated Not Successfully!';
-			$this->session->set_flashdata($data);
-			redirect('page/service_page');
-		}
-		
-	}
-
-
-
-	/*============== GAllery Pages==============*/
-	public function gallery_page()
-	{
-		$data['title']='Gallery';
-		$data['page_path']='admin/pages/gallery_page';
-		$data['gallary_images'] = $this->Page_model->get_all_gallery_images();
-		$this->load->view('admin/master', $data);
-	}
-
-
-	// ====== Slider Image Insert In database===========
-	public function gallary_image_store()
-	{ 
-		if($this->Page_model->gallery_image_insert()){
-
-			$data['success'] = 'Image Store Successfully';
-			$this->session->set_flashData($data);
-			redirect('page/gallery_page');
-		}else{
-			$data['error'] = 'Some Thing Wrong Try again Later';
-			$this->session->set_flashData($data);
-			redirect('page/gallery_page');
-		}
-		
-	}
-
-
-	//========== Slider Image Delete ============
-	public function gallery_image_delete($id=null)
-	{
-		if($this->Page_model->delete_gallery_image($id)){
-
-			$data['success'] = 'Image Delete Successfully';
-			$this->session->set_flashData($data);
-			redirect('page/gallery_page');
-		}else{
-			$data['error'] = 'Image Not Deleted. Try Again!';
-			$this->session->set_flashData($data);
-			redirect('page/gallery_page');
-		}
-	}
-
 
 
 	//========== updated About Us info
 
-	public function address()
+	public function contact_us_update()
 	{
-		$this->form_validation->set_rules('address', 'Address', 'trim|required');
-			
-		if($this->form_validation->run() == FALSE){
-			echo 0;
-		}else{
-
-			if($this->Page_model->insert_or_update_address_info()){
-				echo 1;
-			}else{
-				echo 0;
-			}
-		}
+		
 	}
 
 
-	//========== updated or insert phone_number info
-
-	public function phone_number()
-	{
-		$this->form_validation->set_rules('phone', 'Phone', 'trim|required');
-			
-		if($this->form_validation->run() == FALSE){
-			echo 0;
-		}else{
-
-			if($this->Page_model->insert_or_update_phone_info()){
-				echo 1;
-			}else{
-				echo 0;
-			}
-		}
-	}
-
-	//========== updated or insert Email Address info
-
-	public function email_address()
-	{
-		$this->form_validation->set_rules('email', 'Email Address', 'trim|required');
-			
-		if($this->form_validation->run() == FALSE){
-			echo 0;
-		}else{
-
-			if($this->Page_model->insert_or_update_email_info()){
-				echo 1;
-			}else{
-				echo 5;
-			}
-		}
-	}
 
 
 	//========== Video Gallery page==========

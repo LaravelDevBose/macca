@@ -43,14 +43,16 @@
 
 
 
+    <!-- gallary -->
+    <link href="../../../blueimp.github.io/Gallery/css/blueimp-gallery.min.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url();?>/libs/backEnd/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url();?>/libs/backEnd/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" type="text/css"> 
 
-
-
-
-
-
-
-
+    <!-- Data Table CSS -->
+    <link href="<?= base_url();?>/libs/backEnd/plugins/dataTables/css/jquery.dataTables.html" rel="stylesheet" type="text/css">
+    <link href="<?= base_url();?>/libs/backEnd/plugins/dataTables/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css">  
+<!-- bootstrap-wysihtml -->
+    <link href="<?= base_url();?>/libs/backEnd/plugins/bootstrap-wysiwyg/css/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet" type="text/css">   
 
 
 
