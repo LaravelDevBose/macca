@@ -17,6 +17,7 @@ Class Page extends CI_Controller{
 	{
 		$data['title'] 		= 'Member List';
 		$data['page_path'] 	= 'admin/member/member_list';
+		$data['members']	= $this->User_model->get_all_user();
 		$this->load->view('admin/master', $data); 
 	}
 	
@@ -37,7 +38,7 @@ Class Page extends CI_Controller{
 	{
 		$this->form_validation-> set_rules('about_us', 'About Us', 'trim|required');
 			
-		if($this->form_validation->run() == FALSE){
+		if($this->form_validation->run() == FALSE){ 
 			$data['title']='About Us';
 			$data['page_path']='admin/pages/about_us_page';
 			$data['about_us'] = $this->Page_model->get_about_us_info();
@@ -74,7 +75,15 @@ Class Page extends CI_Controller{
 
 	public function contact_us_update()
 	{
-		
+		if($this->Page_model->insert_or_update_contact_us_info()){
+			$data['success'] = 'Contact Us Info Updated Successfully!';
+			$this->session->set_flashdata($data);
+			redirect('contact_us_page');
+		}else{
+			$data['error'] = 'Contact Us Info Not Updated Successfully!';
+			$this->session->set_flashdata($data);
+			redirect('contact_us_page');
+		}
 	}
 
 

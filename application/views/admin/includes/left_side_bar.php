@@ -1,12 +1,7 @@
 <div class="vd_navbar vd_nav-width vd_navbar-tabs-menu vd_navbar-left  ">
     
     <div class="navbar-menu clearfix">
-        <!-- <div class="vd_panel-menu hidden-xs">
-            <span data-original-title="Expand All" data-toggle="tooltip" data-placement="bottom" data-action="expand-all" class="menu" data-intro="<strong>Expand Button</strong><br/>To expand all menu on left navigation menu." data-step=4 >
-                <i class="fa fa-sort-amount-asc"></i>
-            </span>                   
-        </div> -->
-        <h3 class="menu-title hide-nav-medium hide-nav-small">Side bar</h3>
+        <br>
         <div class="vd_menu">
             <ul>
                 <li>
@@ -30,7 +25,7 @@
                     </a> 
                 </li>
                 <li>
-                    <a href="email.html">
+                    <a href="<?= base_url();?>logo_page">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
                         <span class="menu-text">Logo</span>  
                     </a> 
@@ -50,7 +45,7 @@
                 </li>
 
                 <li>
-                    <a href="email.html">
+                    <a href="<?= base_url();?>business">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
                         <span class="menu-text">Other Bussnies</span>  
                     </a> 
@@ -62,7 +57,7 @@
                     </a> 
                 </li>
                 <li>
-                    <a href="email.html">
+                    <a href="<?= base_url();?>material_page">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
                         <span class="menu-text">Printing Materials</span>  
                     </a> 
@@ -79,6 +74,27 @@
                     <a href="<?= base_url();?>contact_us_page">
                         <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
                         <span class="menu-text">Contact Us</span>  
+                    </a> 
+                </li>
+
+                <li>
+                    <a href="<?= base_url();?>md_message_page">
+                        <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
+                        <span class="menu-text">Message</span>  
+                    </a> 
+                </li>
+
+                <li>
+                    <a href="<?= base_url();?>wellcome_note">
+                        <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
+                        <span class="menu-text">Welcome Note</span>  
+                    </a> 
+                </li>
+
+                <li>
+                    <a href="<?= base_url();?>admin_page">
+                        <span class="menu-icon"><i class="fa fa-dashboard"></i></span> 
+                        <span class="menu-text">Admin</span>  
                     </a> 
                 </li>
 

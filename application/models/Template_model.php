@@ -218,7 +218,7 @@ Class Template_model extends CI_Model{
 		if( in_array($type, array('jpg', 'png', 'jpeg', 'gif', 'JPG', 'PNG', 'JPEG', 'GIF' )) ){
 
 				if( is_uploaded_file( $tmp_name ) ){
-					$dist_path = 'libs/upload_pic/logo_image/'.$file_name ;
+					$dist_path = 'libs/upload_pic/template/'.$file_name ;
 				move_uploaded_file( $tmp_name, $dist_path);
 				return $dist_path;
 				
@@ -243,7 +243,7 @@ Class Template_model extends CI_Model{
 		 $configSize1['width']           = 120;
 		 $config['quality']   			 = '100';
 		 $configSize1['height']          = 80;
-		 $configSize1['new_image'] 		 = 'libs/upload_pic/logo_image/';
+		 $configSize1['new_image'] 		 = 'libs/upload_pic/template/';
 
 		 $this->image_lib->initialize($configSize1);
 		 $this->image_lib->resize();

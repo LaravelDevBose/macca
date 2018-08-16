@@ -41,41 +41,17 @@ Class Page_model extends CI_Model{
 	}
 
 
-	// ==== insert about us informaion
-
-	public function insert_or_update_service_info()
+	public function insert_or_update_contact_us_info()
 	{
-		$attr = array(
-			'field_name' => 'our_service',
-			'value' => $this->input->post('our_service')
-		);
+		$res1 = $this->insert_or_update_address_info();
+		$res2 = $this->insert_or_update_phone_info();
+		$res3 = $this->insert_or_update_email_info();
 
-
-		$result = $this->get_service_info();
-		if($result){
-			$this->db->where('field_name', 'our_service');
-			$this->db->update('template', $attr);
-
-			if($this->db->affected_rows()){
-				return TRUE;
-			}else{
-				return FALSE;
-			}
+		if($res1 && $res2 && $res3){
+			return TRUE;
+		}else{
+			return FALSE;
 		}
-
-		$insert = $this->db->insert('template', $attr);
-
-		if($insert): return TRUE; else: return FALSE; endif;
-	}
-
-
-	//======= get about Us Information
-
-	public function get_service_info()
-	{
-		$result = $this->db->where('field_name', 'our_service')->get('template')->row();
-
-		if($result): return $result;  else: return FALSE; endif;
 	}
 
 
@@ -191,60 +167,7 @@ Class Page_model extends CI_Model{
 
 
 
-	//======= Get all gallery images
-	public function get_all_gallery_images()
-	{
-		$result = $this->db->order_by('id', 'desc')->get('gallerys')->result();
-
-		if($result): return $result; else: return FALSE; endif;
-	}
-
-	//======= Get all gallery images
-	public function get_images_for_right_sidebar()
-	{
-		$result = $this->db->order_by('id', 'desc')->limit(6)->get('gallerys')->result();
-
-		if($result): return $result; else: return FALSE; endif;
-	}
-
-
-
-	//======== Store Slider Image Information
-	public function gallery_image_insert()
-	{
-		$imageName = $_FILES['image']['name'];	
-		$tmp_name = $_FILES['image']['tmp_name'];	
-
-		$file_path = $this->image_upload($imageName, $tmp_name);
-		$this->image_resize($file_path);
-		$attr = [
-			'g_title' => $this->input->post('g_title'),
-			'image' =>$file_path
-		];
-		$insert = $this->db->insert('gallerys', $attr);
-
-		if($insert): return TRUE; else: return FALSE; endif; 
-	}
-
-	//========= Slider Inage Delete ==========
-	public function delete_gallery_image($id=null)
-	{
-		
-		$image = $this->db->where('id', $id)->get('gallerys')->row();
-		$this->db->where('id', $id);
-		$this->db->delete('gallerys');
-
-		if($this->db->affected_rows()){
-
-			if(file_exists($image->image)){
-				unlink($image->image);
-			}
-			return TRUE;
-		}else{
-			return FALSE;
-		}
-
-	}
+	
 
 	/*========== get all video information=-=============*/
 	public function get_all_video()
@@ -287,46 +210,7 @@ Class Page_model extends CI_Model{
 		if($result): return $result; else: return FALSE; endif;
 	}
 
-	/*==========Image Upload In Folder===========*/
-	public function image_upload($imageName = null, $tmp_name){
-		$type = explode('.', $imageName);
-		$type = $type[count($type)-1];
-		$file_name= uniqid(rand()).'.'.$type;
-
-		if( in_array($type, array('jpg', 'png', 'jpeg', 'gif', 'JPG', 'PNG', 'JPEG', 'GIF' )) ){
-
-				if( is_uploaded_file( $tmp_name ) ){
-					$dist_path = 'libs/upload_pic/gallery_image/'.$file_name ;
-				move_uploaded_file( $tmp_name, $dist_path);
-				return $dist_path;
-				
-			}else{
-				return false;
-			}
-		}else{
-			return false;
-		}
-	}
-
-
-
-	// =============== Resize Uploded Image ==================
-	public function image_resize($sourse){
-
-		 /* First size */
-		 $configSize1['image_library']   = 'gd2';
-		 $configSize1['source_image'] 	 = $sourse;
-		 $configSize1['create_thumb']    = FALSE;
-		 $configSize1['maintain_ratio']  = FALSE;
-		 $configSize1['width']           = 1200;
-		 $config['quality']   			 = '100';
-		 $configSize1['height']          = 500;
-		 $configSize1['new_image'] 		 = 'libs/upload_pic/gallery_image/';
-
-		 $this->image_lib->initialize($configSize1);
-		 $this->image_lib->resize();
-		 $this->image_lib->clear();		 
-	}
+	
 
 
 }

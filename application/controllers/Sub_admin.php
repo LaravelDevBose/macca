@@ -8,7 +8,7 @@ Class Sub_admin extends CI_Controller{
 		parent::__construct();
 
 		//check user login or not
-		if(!$this->Admin_model->is_admin_loged_in() ){
+		if(!$this->Admin_model->is_admin_loged_in() ){ 
 			redirect('admin/login');
 		}
 	}
@@ -112,6 +112,8 @@ Class Sub_admin extends CI_Controller{
 
 	public function update_admin($id=null)
 	{	
+		$old_image = $this->input->post('old_image');
+
 
 		$this->form_validation->set_rules('name', 'Name','trim|required');
 		$this->form_validation->set_rules('username', 'Username','trim|required');
@@ -130,7 +132,8 @@ Class Sub_admin extends CI_Controller{
 			$this->load->view('admin/master', $data);
 		}else{
 			if(!isset($_FILES['image']) || $_FILES['image']['error'] == UPLOAD_ERR_NO_FILE){
-					$res = $this->Admin_model->edit_admin_data_update($id);
+
+					$res = $this->Admin_model->edit_admin_data_update($old_image, $id);
 
 				if($res == 2){
 					$data['success'] = 'Admin Updated Successfully!';
@@ -157,6 +160,10 @@ Class Sub_admin extends CI_Controller{
 						$this->image_resize($image_path);
 						$res = $this->Admin_model->edit_admin_data_update_with_image($image_path, $id);
 					if($res == 2){
+						if(file_exists($old_image)){
+							unlink($old_image);
+						}
+						
 						$data['success'] = 'Admin Updated Successfully!';
 						$this->session->set_flashdata($data);
 						redirect('admin_page');
@@ -221,7 +228,7 @@ Class Sub_admin extends CI_Controller{
 			if( in_array($type, array('jpg', 'png', 'jpeg', 'gif', 'JPEG', 'PNG', 'JPEG', 'GIF' )) ){
 
 					if( is_uploaded_file( $_FILES['image']['tmp_name'] ) ){
-						$dist = './libs/upload_pic/admin_image/'.$file_name;
+						$dist = 'libs/upload_pic/admin_image/'.$file_name;
 					move_uploaded_file( $_FILES['image']['tmp_name'], $dist);
 					return $dist;
 				}else{
@@ -246,7 +253,7 @@ Class Sub_admin extends CI_Controller{
 		 $configSize1['width']           = 60;
 		 $config['quality']   			 = '100';
 		 $configSize1['height']          = 60;
-		 $configSize1['new_image'] 		 = './libs/upload_pic/admin_image/';
+		 $configSize1['new_image'] 		 = 'libs/upload_pic/admin_image/';
 
 		 $this->image_lib->initialize($configSize1);
 		 $this->image_lib->resize();

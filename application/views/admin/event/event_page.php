@@ -6,7 +6,7 @@
             <h3 class="panel-title"> 
             	<span class="menu-icon"> 
             		<i class="fa fa-dot-circle-o"></i> 
-            	</span> Service & Price list 
+            	</span> News & Event list 
             </h3>
             <div class="vd_panel-menu">
                 <a href="<?= base_url(); ?>event/create" class="btn btn-warning btn-sm pull-right" > <i class="glyphicon glyphicon-plus"></i>  Add News & Event</a>
@@ -17,35 +17,32 @@
             <table class="table table-striped table-hover table-bordered" id="data-tables">
                 <thead>
                     <tr>
-                        <th>Rendering engine</th>
-                        <th>Browser</th>
-                        <th>Platform(s)</th>
-                        <th>Engine version</th>
-                        <th>CSS grade</th>
+                        <th>Sl No.</th>
+                        <th>Event Title</th>
+                        <th>Event Date</th>
+                        <th>Event Image</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php $i=1; if(isset($events) && $events): foreach($events as $event): ?>
                     <tr class="gradeC">
-                        <td>Misc</td>
-                        <td>IE Mobile</td>
-                        <td>Windows Mobile 6</td>
-                        <td class="center">-</td>
-                        <td class="center">C</td>
+                        <td><?= $i++ ?></td>
+                        <td><?= $event->title; ?></td>
+                        <td>
+                            <?= date('d M Y', strtotime($event->date)); ?>
+                        </td>
+                        <td class="center">
+                            <?php $image = base_url().$event->image; if(!@getimagesize($image)){$image = base_url().'libs/upload_pic/no_image_small.jpg'; }?>
+                            <img src="<?= $image; ?>" alt="<?= $event->title; ?>" style="width: 70px; height: 50px;">
+                        </td>
+                        <td class="menu-action">
+                            <a href="<?= base_url();?>event/view_page/<?= $event->id; ?>" data-original-title="view" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bg-green linka fancybox fancybox.ajax"> <i class="fa fa-eye"></i> </a> 
+                            <a href="<?= base_url();?>event/edit_page/<?= $event->id; ?>" data-original-title="edit" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bg-blue linka fancybox fancybox.ajax"> <i class="fa fa-pencil"></i> </a> 
+                            <a href="<?= base_url();?>event/delete/<?= $event->id; ?>"    data-original-title="delete" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bg-red" onclick="return confirm('Are You Sure Went to delete this ?')"> <i class="fa fa-times"></i> </a>
+                        </td>
                     </tr>
-                    <tr class="gradeC">
-                        <td>Misc</td>
-                        <td>PSP browser</td>
-                        <td>PSP</td>
-                        <td class="center">-</td>
-                        <td class="center">C</td>
-                    </tr>
-                    <tr class="gradeU">
-                        <td>Other browsers</td>
-                        <td>All others</td>
-                        <td>-</td>
-                        <td class="center">-</td>
-                        <td class="center">U</td>
-                    </tr>
+                    <?php endforeach; endif; ?>
                 </tbody>
             </table>
         </div>

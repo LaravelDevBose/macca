@@ -28,23 +28,34 @@ class Gallary extends CI_Controller
 	{
 		$data['title'] 		= 'Gallary';
 		$data['page_path'] 	= 'admin/gallary/gallary_page';
+		$data['gallarys']	= $this->Gallary_model->get_all_gallery_images();
 		$this->load->view('admin/master', $data); 
 	}
 
 
 	// ====== Slider Image Insert In database===========
 	public function gallary_image_store()
-	{ 
-		if($this->Page_model->gallery_image_insert()){
+	{ 	
+		$imageName = $_FILES['image']['name'];
 
-			$data['success'] = 'Image Store Successfully';
-			$this->session->set_flashData($data);
-			redirect('page/gallery_page');
+		
+		if(!empty($imageName) && $imageName){
+			if($this->Gallary_model->gallery_image_insert()){
+
+				$data['success'] = 'Image Store Successfully';
+				$this->session->set_flashData($data);
+				redirect('gallery_page');
+			}else{
+				$data['error'] = 'Some Thing Wrong Try again Later';
+				$this->session->set_flashData($data);
+				redirect('gallery_page');
+			}
 		}else{
-			$data['error'] = 'Some Thing Wrong Try again Later';
+			$data['error'] = 'Select A Gallay Image First';
 			$this->session->set_flashData($data);
-			redirect('page/gallery_page');
+			redirect('gallery_page');
 		}
+		
 		
 	}
 
@@ -52,15 +63,15 @@ class Gallary extends CI_Controller
 	//========== Slider Image Delete ============
 	public function gallery_image_delete($id=null)
 	{
-		if($this->Page_model->delete_gallery_image($id)){
+		if($this->Gallary_model->delete_gallery_image($id)){
 
 			$data['success'] = 'Image Delete Successfully';
 			$this->session->set_flashData($data);
-			redirect('page/gallery_page');
+			redirect('gallery_page');
 		}else{
 			$data['error'] = 'Image Not Deleted. Try Again!';
 			$this->session->set_flashData($data);
-			redirect('page/gallery_page');
+			redirect('gallery_page');
 		}
 	}
 }

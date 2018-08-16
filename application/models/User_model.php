@@ -32,27 +32,25 @@ Class User_model extends CI_Model{
 	{
 		$pass = md5($this->input->post('password'));
 		$attr = array(
-			'name' 		=> $this->input->post('name'), 
-			'username' 	=> $this->input->post('username'), 
+			'name' 		=> $this->input->post('name'),  
 			'email' 	=> $this->input->post('email'), 
-			'phone_num' => $this->input->post('phone_num'), 
-			'password' 	=> $pass, 
-			'user_type' => 'a',
+			'phone_num' => $this->input->post('phone_num'),
+			'message'	=> $this->input->post('message'),
 		);
 		$insert = $this->db->insert('users', $attr);
-		$user_id = $this->db->insert_id();
 		if($insert)
 		{	
-			$data=[
-				'user_id'  =>$user_id,
-				'user_name'=>$this->input->post('name'),
-			];
-			$this->session->set_userdata($data);
 			return TRUE;
 		}
 		else
 		{
 			return FALSE;
 		}
+	}
+
+	/*======= get_all_user =========*/
+	public function get_all_user()
+	{
+		return $this->db->get('users')->result();
 	}
 }

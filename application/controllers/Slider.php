@@ -26,17 +26,26 @@ Class Slider extends CI_Controller{
 
 	// ====== Slider Image Insert In database===========
 	public function slider_image_store()
-	{ 
-		if($this->Slider_model->slider_image_insert()){
+	{ 	
+		$imageName = $_FILES['image']['name'];
 
-			$data['success'] = 'Slider Image Store Successfully';
-			$this->session->set_flashData($data);
-			redirect('sliders');
+		if(!empty($imageName) && $imageName){
+			if($this->Slider_model->slider_image_insert()){
+
+				$data['success'] = 'Slider Image Store Successfully';
+				$this->session->set_flashData($data);
+				redirect('sliders');
+			}else{
+				$data['error'] = 'Some Thing Wrong Try again Later';
+				$this->session->set_flashData($data);
+				redirect('sliders');
+			}
 		}else{
-			$data['error'] = 'Some Thing Wrong Try again Later';
+			$data['error'] = 'Select An Image First';
 			$this->session->set_flashData($data);
 			redirect('sliders');
 		}
+		
 		
 	}
 

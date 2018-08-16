@@ -1,76 +1,23 @@
 
+<?php if($sliders && isset($sliders)): ?>
 <!-- banner -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
-		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#myCarousel" data-slide-to="1" class=""></li>
-		<li data-target="#myCarousel" data-slide-to="2" class=""></li>
-		<li data-target="#myCarousel" data-slide-to="3" class=""></li>
-		<li data-target="#myCarousel" data-slide-to="4" class=""></li>
+		<?php for($i=0; $i< count($sliders); $i++):?>
+		<li data-target="#myCarousel" data-slide-to="<?= $i; ?>" class="<?php echo ($i==0)?'active':'' ?>"></li>
+		<?php endfor; ?>
 	</ol>
 	<div class="carousel-inner" role="listbox">
-		<div class="item active">
-			<div class="container">
-				<div class="carousel-caption">
-					<div class="col-md-6 banner_left">
-						<h4>We work hard</h4>
-						<h3>Maecenas id justo iaculis sapien <span>accumsan luctus</span> aluis ipsum nibh Pellen tesque felis.</h3>
-					</div>
-					<div class="col-md-6 banner_right">
-						<p>Duis viverra laoreet ante. Curabitur in diamelit blandit tellus sollicitudin sollicitudin felis. Pellentesque neque, aliquam vel nunc et, mollismetus.</p>
-						<div class="agileits-button top_ban_agile">
-							<a class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#myModal">Read More »</a>
-						</div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		</div>
-		<div class="item item2">
+		<?php $i=0; foreach($sliders as $slider):?>
+		<div class="item  <?php echo ($i==0)?'active':'' ?>"  style="background: url(<?= base_url(). $slider->image; ?>) no-repeat!important; ">
 			<div class="container">
 				<div class="carousel-caption text-center">
-					<h3>Financial Management <span>System.</span></h3>
-					<p>sagittis quis turpis vel, facilisis posuere erat. Nulla facilisi. Proin vel commodo leo. Ut mauris tortor, cursus ut massa vitae, iaculis vehicula turpis. Pellentesque blandit egestas risus, in porttitor mi sagittis sed. </p>
-					<div class="agileits-button top_ban_agile">
-						<a class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#myModal">Read More »</a>
-					</div>
+					<h3><span><?= ucfirst($slider->s_title)?></span></h3>
 				</div>
 			</div>
 		</div>
-		<div class="item item3">
-			<div class="container">
-				<div class="carousel-caption">
-					<h3>Business Analytics  <span>Course.</span></h3>
-					<p>sagittis quis turpis vel, facilisis posuere erat. Nulla facilisi. Proin vel commodo leo. Ut mauris tortor, cursus ut massa vitae, iaculis vehicula turpis. Pellentesque blandit egestas risus, in porttitor mi sagittis sed. Vestibulum vestibulum quis metus vitae tincidunt. </p>
-					<div class="agileits-button top_ban_agile">
-						<a class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#myModal">Read More »</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="item item4">
-			<div class="container">
-				<div class="carousel-caption text-right">
-					<h3>Strength Strategy  <span>Solutions.</span></h3>
-					<p>sagittis quis turpis vel, facilisis posuere erat. Nulla facilisi. Proin vel commodo leo. Ut mauris tortor, cursus ut massa vitae, iaculis vehicula turpis. Pellentesque blandit egestas risus, in porttitor mi sagittis sed. Vestibulum vestibulum quis metus vitae tincidunt. </p>
-					<div class="agileits-button top_ban_agile">
-						<a class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#myModal">Read More »</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="item item5">
-			<div class="container">
-				<div class="carousel-caption">
-					<h3>Support Management  <span>Service.</span></h3>
-					<p>sagittis quis turpis vel, facilisis posuere erat. Nulla facilisi. Proin vel commodo leo. Ut mauris tortor, cursus ut massa vitae, iaculis vehicula turpis. Pellentesque blandit egestas risus, in porttitor mi sagittis sed. Vestibulum vestibulum quis metus vitae tincidunt. </p>
-					<div class="agileits-button top_ban_agile">
-						<a class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#myModal">Read More »</a>
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php $i=1; endforeach; ?>
 	</div>
 	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 		<span class="fa fa-chevron-left" aria-hidden="true"></span>
@@ -82,54 +29,95 @@
 	</a>
 	<!-- The Modal -->
 </div>
+
+<?php endif;?>
 <!-- //banner -->
+<?php $this->load->view('admin/includes/message'); ?>
+
+<div class="welcome" style="padding: 1em 0 ;">
+	<div class="container">
+		<div class="col-md-8 col-md-offset-2 ">
+			<div class="inner_grid1" style="    margin-bottom: 0em;">
+				<div class="col-md-12 ">
+					<div class="panel panel-default">
+					  	<div class="panel-heading" style="background:#18ba60; color: #fff; "><h3 class="">Welcome To Mocca Digital</h3></div>
+					  	<div class="panel-body">
+					    	<p style="text-align: justify;"><?php if($note && isset($note)){ echo ucfirst($note->value); }?></p>
+							
+					    	
+
+				  		</div>
+					</div>
+										
+					
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- //banner bottom -->
+
 
 <!-- banner bottom -->
-<div class="welcome">
+<div class="welcome" style="padding: 1em 0;">
 	<div class="container">
-		<div class="col-md-6 welcome_left">
-			<div class="layer1">
-				<div class="welcome_left_info">
-					<h3>We offer best services</h3>
-					<p>Lorem ipsum dolor sit amet aueit, consectetur adipiscing elit. Quisque utrisus eget libero finibus. Etiam malesuada tellus quis posuere eleifend. Donec varius nisi at</p>
-					<div class="read">
-						<a href="about.html">Read more »</a>
+		<div class="col-md-6 ">
+			<div class="inner_grid1">
+				<div class="col-md-12 ddd">
+					<div class="panel panel-default">
+					  	<div class="panel-heading"><h3 class="">About Us</h3></div>
+					  	<div class="panel-body" style="    min-height: 250px;">
+					    	<p style="text-align: justify;"><?php if($about_us && isset($about_us)){ if(strlen($about_us->value) <= 300 ){ echo substr($about_us->value, 5, strlen($about_us->value)-5 ); } else{ echo substr($about_us->value, 5, 300); }  }?></p>
+							<a href="<?= base_url('about_us'); ?>" style="color: #28b767; float: right;">Read more »</a>
+					    	
+
+				  		</div>
 					</div>
+										
+					
 				</div>
+				<div class="clearfix"></div>
+			</div>
+			
+		</div>
+		<div class="col-md-6  ">
+			<div class="testimonial ddd">
+				<div class="panel panel-default">
+				  	<div class="panel-heading"><h3 class="">Message</h3></div>
+				  	<div class="panel-body" style="    min-height: 250px;">
+				    	<div class="col-md-3 test_img">
+				    		<?php $dft_image = base_url().'libs/upload_pic/admin_image/admin_defult.jpg' ;
+				    			if($md_image && isset($md_image)){
+				    				$image =base_url().$md_image->value; 
+	                                if(!@getimagesize($image)){
+	                                    $image = $dft_image; 
+	                                }
+				    			}else{
+				    				$image = $dft_image; 
+				    			}
+                                
+                            ?>
+							<img src="<?= $image; ?>" alt="<?php if($md_name && isset($md_name)){echo ucfirst($md_name->value); }?>" height="90" />
+						</div>
+						<div class="col-md-9 test_info">
+							<h4><?php if($md_name && isset($md_name)){echo ucfirst($md_name->value); }?></h4>
+							<h5><?php if($md_desig && isset($md_desig)){echo ucfirst($md_desig->value); }?></h5>
+							
+						</div>
+						<div class="clearfix"></div>
+						<p style="text-align: justify;"><?php if($md_message && isset($md_message)){ echo substr($md_message->value, 5 , 200);}?> </p>
+						<div class="clearfix"></div>
+						<a href="<?= base_url('about_us'); ?>" style="color: #28b767; float: right;">Read more »</a>
+						
+			  		</div>
+				</div>
+				
 			</div>
 		</div>
-		<div class="col-md-6 welcome_right">
-			<div class="inner_grid1">
-				<div class="col-md-2 icon color1">
-					<span class="fa fa-file-o" aria-hidden="true"></span>
-				</div>
-				<div class="col-md-10 grid_info">
-					<h3>Financial Executive</h3>
-					<p>Lorem ipsum dolor sit amet aueit, consectetur adipiscing elit. Quisque utrisus eget libero finibus. Etiam malesuada tellus quis posuere eleifend. Donec varius nisi at</p>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="inner_grid1">
-				<div class="col-md-2 icon color2">
-					<span class="fa fa-diamond" aria-hidden="true"></span>
-				</div>
-				<div class="col-md-10 grid_info">
-					<h3>Management System</h3>
-					<p>Lorem ipsum dolor sit amet aueit, consectetur adipiscing elit. Quisque utrisus eget libero finibus. Etiam malesuada tellus quis posuere eleifend. Donec varius nisi at</p>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="inner_grid1">
-				<div class="col-md-2 icon color3">
-					<span class="fa fa-line-chart" aria-hidden="true"></span>
-				</div>
-				<div class="col-md-10 grid_info">
-					<h3>Business Analytics</h3>
-					<p>Lorem ipsum dolor sit amet aueit, consectetur adipiscing elit. Quisque utrisus eget libero finibus. Etiam malesuada tellus quis posuere eleifend. Donec varius nisi at</p>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
+		
 		<div class="clearfix"></div>
 	</div>
 </div>
@@ -137,130 +125,45 @@
 
 <!-- Team -->
 <div class="team" id="team">
-	<h3 class="heading">Professional Team</h3>
+	<h3 class="heading">Our Other Business</h3>
 	<div class="container">
 		<div class="flexslider-info">
 			<section class="slider">
 				<div class="flexslider">
+					
 					<ul class="slides">
+						<?php $count = 0; $i = 0; foreach($business as $busines): ?>
+
+						<?php if($i == 0): ?>
 						<li>
 							<div class="w3l-info1">
+						<?php endif;?>
 								<div class="col-md-6">
 									<div class="col-md-5 team-grid-1">
-										<img src="<?= base_url(); ?>libs/frontEnd/images/team1.jpg" alt="" />
+										<?php
+											$image = base_url().$busines->image;
+											if(!@getimagesize($image)){ $image = base_url().'libs/upload_pic/no_image_small.jpg'; }
+										?>
+										<img src="<?= $image; ?>" alt="" />
 									</div>
-									<div class="col-md-7 team-grid-2">
-										<h4>Laura Elisa</h4>
-										<h5> Founder & CEO</h5>
-										<p>Lorem ipsum dolor sit amet augueit, consectetur adipiscing elit. Quisque utrisus eget libero finibus.</p>
-										<div class="w3ls-social-icons text-left">
-											<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-											<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-											<a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a>
-											<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-										</div>
+									<div class="col-md-7 team-grid-2" style="padding-top: 30px;">
+										<h4><?= ucfirst($busines->b_title)?></h4>
+										
+										<p style="text-align: justify;"><?= substr($busines->description, 0 ,100) ?></p>
+										
+										<a href="<?= base_url();?>singel_busines/<?= $busines->id; ?>" class="linka fancybox fancybox.ajax">Read more »</a>
+										
 									</div>
 									<div class="clearfix"></div>
 								</div>
-								<div class="col-md-6">
-									<div class="col-md-5 team-grid-1">
-										<img src="<?= base_url(); ?>libs/frontEnd/images/team5.jpg" alt="" />
-									</div>
-									<div class="col-md-7 team-grid-2">
-										<h4>Johnson</h4>
-										<h5>Co-founder</h5>
-										<p>Lorem ipsum dolor sit amet augueit, consectetur adipiscing elit. Quisque utrisus eget libero finibus.</p>
-										<div class="w3ls-social-icons text-left">
-											<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-											<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-											<a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a>
-											<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
+								
+						<?php $count++; $i++;  if($i==2 || $count== count($business)){ $i=0;  ?>
 									<div class="clearfix"></div>
 							</div>
 						</li>
-						<li>
-							<div class="w3l-info1">
-								<div class="col-md-6">
-									<div class="col-md-5 team-grid-1">
-										<img src="<?= base_url(); ?>libs/frontEnd/images/team2.jpg" alt="" />
-									</div>
-									<div class="col-md-7 team-grid-2">
-										<h4>Isabella</h4>
-										<h5>Manager</h5>
-										<p>Lorem ipsum dolor sit amet augueit, consectetur adipiscing elit. Quisque utrisus eget libero finibus.</p>
-										<div class="w3ls-social-icons text-left">
-											<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-											<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-											<a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a>
-											<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="col-md-6">
-									<div class="col-md-5 team-grid-1">
-										<img src="<?= base_url(); ?>libs/frontEnd/images/team2.jpg" alt="" />
-									</div>
-									<div class="col-md-7 team-grid-2">
-										<h4>Richard</h4>
-										<h5>Supervisor</h5>
-										<p>Lorem ipsum dolor sit amet augueit, consectetur adipiscing elit. Quisque utrisus eget libero finibus.</p>
-										<div class="w3ls-social-icons text-left">
-											<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-											<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-											<a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a>
-											<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-									<div class="clearfix"></div>
-							</div>
-						</li>
-						<li>
-							<div class="w3l-info1">
-								<div class="col-md-6">
-									<div class="col-md-5 team-grid-1">
-										<img src="<?= base_url(); ?>libs/frontEnd/images/team4.jpg" alt=""  />
-									</div>
-									<div class="col-md-7 team-grid-2">
-										<h4>Carnivel</h4>
-										<h5>Manager</h5>
-										<p>Lorem ipsum dolor sit amet augueit, consectetur adipiscing elit. Quisque utrisus eget libero finibus.</p>
-										<div class="w3ls-social-icons text-left">
-											<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-											<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-											<a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a>
-											<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="col-md-6">
-									<div class="col-md-5 team-grid-1">
-										<img src="<?= base_url(); ?>libs/frontEnd/images/team4.jpg" alt=""  />
-									</div>
-									<div class="col-md-7 team-grid-2">
-										<h4>Carnivel</h4>
-										<h5>Administrator</h5>
-										<p>Lorem ipsum dolor sit amet augueit, consectetur adipiscing elit. Quisque utrisus eget libero finibus.</p>
-										<div class="w3ls-social-icons text-left">
-											<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-											<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-											<a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a>
-											<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						</li>
+						<?php }  endforeach; ?>
 					</ul>
+					
 				</div>
 			</section>
 		</div>
@@ -269,143 +172,106 @@
 <!-- //Team -->
 
 <!-- Services -->
-<div class="services" id="services">
-	<h3 class="heading">Services</h3>
-	<div class="container-fluid">
-		<div class="services_grids">
-			<div class="col-md-3 ser_grid1">
-				<img src="<?= base_url(); ?>libs/frontEnd/images/service1.jpg" alt="service1" />
-				<div class="ser_info">
-					<i class="fa icon fa-suitcase"></i>
-					<h4> Business Strategy </h4>
-					<i class="fa fa-plus"></i>
-					<div class="clearfix"></div>
+<div class="services" id="services" >
+	<div class="col-md-9">
+		<h3 class="heading">Services</h3>
+		<div class="container-fluid">
+			<div class="services_grids">
+			<?php if($serviess && isset($serviess)):  foreach($serviess as $servies): ?>
+				<div class="col-md-3 ser_grid1">
+					<a href="<?= base_url();?>singel_service/<?= $servies->id; ?>" class="linka fancybox fancybox.ajax">
+						<?php
+							$image = base_url().$servies->image;
+							if(!@getimagesize($image)){ $image = base_url().'libs/upload_pic/no_image_small.jpg'; }
+						?>
+						<img src="<?= $image; ?>" alt="<?php echo ucfirst($servies->s_title); ?>" style="height: 200px;" />
+						<div class="ser_info">
+							<h4 style="width: 100%;"> <?php echo ucfirst($servies->s_title); ?> </h4>
+							<div class="clearfix"></div>
+						</div>
+						<p style="text-align: justify;"><?php echo substr($servies->description, 0,100); ?></p>
+					</a>
 				</div>
-				<p>Lorem ipsum dolor sit amet augueit, consectet adipiscing elit. Quisque utrisus eget libero finibus sollicitudin quisi mauris.</p>
-			</div>
-			<div class="col-md-3 ser_grid1">
-				<img src="<?= base_url(); ?>libs/frontEnd/images/service2.jpg" alt="service1" />
-				<div class="ser_info">
-					<i class="fa icon fa-money"></i>
-					<h4> Financial Solutions </h4>
-					<i class="fa fa-plus"></i>
-					<div class="clearfix"></div>
+				<?php endforeach; ?>
+				<div class="clearfix"> </div>
+				<div class="ser_all" >
+					<a href="<?= base_url('services');?>">Show all services</a>
 				</div>
-				<p>Lorem ipsum dolor sit amet augueit, consectet adipiscing elit. Quisque utrisus eget libero finibus sollicitudin quisi mauris.</p>
-			</div>
-			<div class="col-md-3 ser_grid1">
-				<img src="<?= base_url(); ?>libs/frontEnd/images/service3.jpg" alt="service1" />
-				<div class="ser_info">
-					<i class="fa icon fa-cogs"></i>
-					<h4> Business Solutions </h4>
-					<i class="fa fa-plus"></i>
-					<div class="clearfix"></div>
-				</div>
-				<p>Lorem ipsum dolor sit amet augueit, consectet adipiscing elit. Quisque utrisus eget libero finibus sollicitudin quisi mauris.</p>
-			</div>
-			<div class="col-md-3 ser_grid1">
-				<img src="<?= base_url(); ?>libs/frontEnd/images/service4.jpg" alt="service1" />
-				<div class="ser_info">
-					<i class="fa icon fa-users"></i>
-					<h4> 24/7 support </h4>
-					<i class="fa fa-plus"></i>
-					<div class="clearfix"></div>
-				</div>
-				<p>Lorem ipsum dolor sit amet augueit, consectet adipiscing elit. Quisque utrisus eget libero finibus sollicitudin quisi mauris.</p>
-			</div>
-			<div class="clearfix"> </div>
-			<div class="ser_all">
-				<a href="services.html">Show all services</a>
+			<?php endif; ?>
 			</div>
 		</div>
 	</div>
+	<div class="col-md-3">
+		<h3 class="heading">News & Event</h3>
+		<div class="panel panel-default">
+		  	<div class="panel-body">
+		  		<marquee onmouseover="this.stop();" onmouseout="this.start();" direction="up" scrollamount="3" scrolldelay="50" top="0" left="0" style="height: 220px;">
+	                <div class="marqueeContent">
+	                    <?php
+	                        if ($news_events && isset($news_events)) :
+	                        foreach ($news_events as $news) :
+	                    ?>
+	                        <a href="<?php echo base_url(); ?>details_NewsEvent/<?php echo $news->id; ?>"  class="linka fancybox fancybox.ajax" ><?php echo $news->title; ?></a> <br>
+	                        <p style="border-bottom: 1px solid #ccc;"><?php echo date('d M Y', strtotime($news->date)); ?></p>
+	                    <?php endforeach; endif; ?>
+	                </div>
+	            </marquee>
+		  	</div>
+	  	</div>
+		
+	</div>
+	<div class="clearfix"> </div>
 </div>
 <!-- //Services -->
-
+<div class="clearfix"> </div>
 <!-- testimonials free consulting -->
-<div class="test_consultant">
+<div class="test_consultant" style="padding-top: 2rem;">
 	<div class="container">
 		<!-- Testimonials Slider-->
 		<div class="slider col-md-6">
-			<h3 class="heading">Happy Clients</h3>
+
+<link rel="stylesheet" href="<?php echo base_url(); ?>libs/FrontEnd/dist/css/lightbox.min.css">
+			<h3 class="heading">Printing Materials</h3>
 				<div class="callbacks_container">
-					<ul class="rslides callbacks callbacks1" id="slider4">
-						<li>
-							<div class="testimonial">
-								<div class="col-md-3 test_img">
-									<img src="<?= base_url(); ?>libs/frontEnd/images/team1.jpg" alt="client1" />
+					<div class="services_grids">
+					<?php if($materials && isset($materials)):  foreach($materials as $material): ?>
+						<div class="col-md-6 ser_grid1" style="padding-bottom: 15px">
+							<?php
+								$image = base_url().$material->image;
+								if(!@getimagesize($image)){ $image = base_url().'libs/upload_pic/no_image_small.jpg'; }
+							?>
+							<a class="example-image-link" href="<?php echo $image; ?>" data-lightbox="example-set" data-title="<?php echo ucfirst($material->material_name); ?>">
+								<img src="<?= $image; ?>" alt="<?php echo ucfirst($material->material_name); ?>" style="height: 120px;" />
+								<div class="ser_info">
+									<h4 style="width: 100%"> <?php echo ucfirst($material->material_name); ?> </h4>
+									<div class="clearfix"></div>
 								</div>
-								<div class="col-md-9 test_info">
-									<h4>Laura Elisa</h4>
-									<h5>designation</h5>
-									<ul class="rating">
-										<li><span class="fa fa-star" aria-hidden="true"></span></li>
-										<li><span class="fa fa-star" aria-hidden="true"></span></li>
-										<li><span class="fa fa-star" aria-hidden="true"></span></li>
-										<li><span class="fa fa-star" aria-hidden="true"></span></li>
-										<li><span class="fa fa-star-half-o" aria-hidden="true"></span></li>
-									</ul>
-								</div>
-								<div class="clearfix"></div>
-								<p>Donec bibendum molestie cursus. Integer ex enim, sollicitudin quisi mauris pellentesque ac in, dignissim. Vestibulum vel consequateros, a fermentum risus. Phasellus volutpat, dolor laoreet condim entum eleifend, justo turpis euismod neque, sit amet bibendum libero nisl id orci. Proin sodales cursus eros vel auctor. </p>
-							</div>
-						</li>
-						<li>
-							<div class="testimonial">
-								<div class="col-md-3 test_img">
-									<img src="<?= base_url(); ?>libs/frontEnd/images/team2.jpg" alt="client1" />
-								</div>
-								<div class="col-md-9 test_info">
-									<h4>Isabella</h4>
-									<h5>designation</h5>
-									<ul class="rating">
-										<li><span class="fa fa-star" aria-hidden="true"></span></li>
-										<li><span class="fa fa-star" aria-hidden="true"></span></li>
-										<li><span class="fa fa-star" aria-hidden="true"></span></li>
-										<li><span class="fa fa-star-half-o" aria-hidden="true"></span></li>
-										<li><span class="fa fa-star-o" aria-hidden="true"></span></li>
-									</ul>
-								</div>
-								<div class="clearfix"></div>
-								<p>Donec bibendum molestie cursus. Integer ex enim, sollicitudin quisi mauris pellentesque ac in, dignissim. Vestibulum vel consequateros, a fermentum risus. Phasellus volutpat, dolor laoreet condim entum eleifend, justo turpis euismod neque, sit amet bibendum libero nisl id orci. Proin sodales cursus eros vel auctor. </p>
-							</div>
-						</li>
-						<li>
-							<div class="testimonial">
-								<div class="col-md-3 test_img">
-									<img src="<?= base_url(); ?>libs/frontEnd/images/team3.jpg" alt="client1" />
-								</div>
-								<div class="col-md-9 test_info">
-									<h4>Johnson</h4>
-									<h5>designation</h5>
-									<ul class="rating">
-										<li><span class="fa fa-star" aria-hidden="true"></span></li>
-										<li><span class="fa fa-star" aria-hidden="true"></span></li>
-										<li><span class="fa fa-star" aria-hidden="true"></span></li>
-										<li><span class="fa fa-star" aria-hidden="true"></span></li>
-										<li><span class="fa fa-star-o" aria-hidden="true"></span></li>
-									</ul>
-								</div>
-								<div class="clearfix"></div>
-								<p>Donec bibendum molestie cursus. Integer ex enim, sollicitudin quisi mauris pellentesque ac in, dignissim. Vestibulum vel consequateros, a fermentum risus. Phasellus volutpat, dolor laoreet condim entum eleifend, justo turpis euismod neque, sit amet bibendum libero nisl id orci. Proin sodales cursus eros vel auctor. </p>
-							</div>
-						</li>
-					</ul>
-		<div class="clearfix"> </div>
+							</a>
+						</div>
+						<?php endforeach; ?>
+						<div class="clearfix"> </div>
+						<div class="ser_all">
+							<a href="<?= base_url('materials');?>">Show all Materials</a>
+						</div>
+					<?php endif; ?>
+					</div>
+					<div class="clearfix"> </div>
 				</div>
+				<script src="<?php echo base_url(); ?>libs/FrontEnd/dist/js/lightbox-plus-jquery.min.js"></script>
+
 		</div>
 		<!-- //Testimonials Slider-->
 		
 		<!-- Free consulting -->
 		<div class="consulting col-md-6">
-			<h3 class="heading">Free consulting</h3>
+			<h3 class="heading">Free Membership</h3>
 			<div class="wthree-contact-form">
-				<form action="#" method="post">
-					<input type="text" name="Name" placeholder="Name" required="">
-					<input type="email" class="email" name="Email" placeholder="Email" required="">
+				<form action="<?= base_url();?>membership/registaion" method="post">
+					<input type="text" name="name" placeholder="Name" required="">
+					<input type="email" class="email" name="email" placeholder="Email" required="">
 					<div class="clearfix"></div>
-					<input type="text" class="number" name="number" placeholder="Phone Number" required="">
-					<textarea name="Message" placeholder="Message" required=""></textarea>
+					<input type="text" class="number" name="phone_num" placeholder="Phone Number" required="">
+					<textarea name="message" placeholder="Message" required=""></textarea>
 					<input type="submit" value="SUBMIT">
 				</form>
 			</div>
@@ -416,64 +282,40 @@
 </div>
 <!-- testimonials free consulting -->
 
-<!-- counter -->
-<div class="services-bottom stats">
-	<div class="banner-dott1">
-		<div class="container">
-			<h3 class="heading">Our Statistics</h3>
-		  <div class="wthree-agile-counter">
-		  <div class="col-md-3 w3_agile_stats_grid-top">
-			<div class="w3_agile_stats_grid">
-				<div class="agile_count_grid_left">
-				<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-				</div>
-				<div class="agile_count_grid_right">
-					<p class="counter">324</p> 
-				</div>
-				<div class="clearfix"> </div>
-				<h4>Best clients</h4>
+
+<!-- Services -->
+<div class="services" id="services">
+	<h3 class="heading">Photo Gallary</h3>
+	<div class="container-fluid">
+		<div class="services_grids">
+		<?php if($gallarys && isset($gallarys)):  foreach($gallarys as $gallary): ?>
+			<div class="col-md-3 ser_grid1">
+				<?php
+					$image = base_url().$gallary->image;
+					if(!@getimagesize($image)){ $image = base_url().'libs/upload_pic/no_image_small.jpg'; }
+				?>
+				<a class="example-image-link" href="<?php echo $image; ?>" data-lightbox="example-set" data-title="<?php echo ucfirst($gallary->g_title); ?>">
+
+					<img src="<?= $image; ?>" alt="<?php echo ucfirst($gallary->g_title); ?>" style="height: 200px;" />
+					<div class="ser_info">
+						
+						<h4 style="width: 100%;"> <?php echo ucfirst($gallary->g_title); ?> </h4>
+						
+						<div class="clearfix"></div>
+					</div>
+				</a>
 			</div>
-		</div>
-		<div class="col-md-3 w3_agile_stats_grid-top">
-			<div class="w3_agile_stats_grid">
-				<div class="agile_count_grid_left">
-					<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-				</div>
-				<div class="agile_count_grid_right">
-					<p class="counter">543</p> 
-				</div>
-				<div class="clearfix"> </div>
-				<h4>Happy Customers</h4>
-			</div>
-		</div>
-		<div class="col-md-3 w3_agile_stats_grid-top">
-			<div class="w3_agile_stats_grid">
-				<div class="agile_count_grid_left">
-					<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
-				</div>
-				<div class="agile_count_grid_right">
-					<p class="counter">434</p> 
-				</div>
-				<div class="clearfix"> </div>
-				<h4>Projects Worked</h4>
-			</div>
-		</div>
-		<div class="col-md-3 w3_agile_stats_grid-top">
-			<div class="w3_agile_stats_grid">
-				<div class="agile_count_grid_left">
-					<span class="fa fa-trophy" aria-hidden="true"></span>
-				</div>
-				<div class="agile_count_grid_right">
-					<p class="counter">234</p> 
-				</div>
-				<div class="clearfix"> </div>
-				<h4>Winning Awards</h4>
-			</div>
-		</div>
+			<?php endforeach; ?>
 			<div class="clearfix"> </div>
+			<div class="ser_all">
+				<a href="<?= base_url('gallary');?>">Show Gallary</a>
+			</div>
+		<?php endif; ?>
 		</div>
-	</div>
 	</div>
 </div>
-<!-- //counter -->
+<!-- //Services -->
+
+
+
 

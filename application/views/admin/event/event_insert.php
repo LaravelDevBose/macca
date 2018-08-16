@@ -5,18 +5,18 @@
 		        <h3 class="panel-title"> <span class="menu-icon"> <i class="fa fa-picture-o"></i> </span>News & Event Insert </h3>
 		    </div>
 		    <div class="panel-body">
-			 	<form id="fileupload" class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
+			 	<form id="fileupload" class="form-horizontal" autocomplete="off"  action="<?= base_url(); ?>event/store" method="POST" enctype="multipart/form-data">
 	                <div class="form-group">
 	                    <label class="col-sm-3 control-label">Title: </label>
 	                    <div class="col-sm-7 controls">
-	                        <input type="text" placeholder="small">
+	                        <input type="text" name="title" placeholder="Event Title" required data-toggle="tooltip" data-placement="top" data-original-title="Your Event Title Here">
 	                    </div>
 	                </div>
 	                <div class="form-group">
 	                    <label class="col-sm-3 control-label">Date: </label>
 	                    <div class="col-sm-7 controls">
 	                        <div class="input-group">
-	                            <input type="text" placeholder="Date" id="datepicker-icon">
+	                            <input type="text" name="date" placeholder="Date" id="datepicker-icon" required data-toggle="tooltip"  data-placement="top" data-original-title="Select Event Date Here" >
 	                            <span class="input-group-addon" id="datepicker-icon-trigger" data-datepicker="#datepicker-icon"><i class="fa fa-calendar"></i></span> 
 	                        </div>
 	                    </div>
@@ -25,17 +25,17 @@
 	                <div class="form-group">
 	                    <label class="col-sm-3 control-label">Image: </label>
 	                    <div class="col-sm-7 controls">
-	                        <span class="btn btn-info fileinput-button">
+	                        <span class="btn btn-info fileinput-button" data-toggle="tooltip" data-placement="top" data-original-title="Select your Event Image Here">
 	                            <i class="glyphicon glyphicon-plus"></i> 
 	                            <span>Event Image</span>
-	                            <input type="file" name="image" multiple accept="images/*" data-toggle="tooltip" data-placement="top" data-original-title="Select your Slider Image Here">
+	                            <input type="file" name="image" multiple accept="images/*" >
 	                        </span>
 	                    </div>
 	                </div>
 	                <div class="form-group">
 	                    <label class="col-sm-3 control-label">Event Details: </label>
 	                    <div class="col-sm-9 controls">
-	                        <textarea id="wysiwyghtml" class="width-100 form-control"  rows="15" placeholder="Write your message here"></textarea>
+	                        <textarea name="description" id="wysiwyghtml" class="width-100 form-control" required  rows="15" placeholder="Write your message here"></textarea>
 	                    </div>
 	                </div>
 

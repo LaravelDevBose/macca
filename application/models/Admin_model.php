@@ -154,7 +154,7 @@ Class Admin_model extends CI_Model{
 
 	/*=================== Admin UPDATE WITH IMAGE================*/
 	/*=================== Admin UPDATE WITH IMAGE================*/
-	public function edit_admin_data_update_with_image($filename, $id = null)
+	public function edit_admin_data_update_with_image($filename = null, $id = null)
 	{
 		$old_password = md5($this->input->post('old_password'));
 

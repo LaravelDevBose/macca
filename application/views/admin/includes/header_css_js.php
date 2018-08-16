@@ -78,4 +78,11 @@
       <script type="text/javascript" src="js/respond.min.js"></script>     
   <![endif]-->
 
+
+     <!-- Swwet Alert Message Box -->
+    <script src="<?php echo base_url();?>libs/backEnd/sweetAlert_script/sweetalert.min.js"></script>
+    
+
+
+
 </head>    

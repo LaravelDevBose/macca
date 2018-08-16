@@ -15,35 +15,23 @@
             <table class="table table-striped table-hover table-bordered" id="data-tables">
                 <thead>
                     <tr>
-                        <th>Rendering engine</th>
-                        <th>Browser</th>
-                        <th>Platform(s)</th>
-                        <th>Engine version</th>
-                        <th>CSS grade</th>
+                        <th>Sl No.</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Message</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php $i= 1; if($members && isset($members)): foreach($members as $member):?>
                     <tr class="gradeC">
-                        <td>Misc</td>
-                        <td>IE Mobile</td>
-                        <td>Windows Mobile 6</td>
-                        <td class="center">-</td>
-                        <td class="center">C</td>
+                        <td><?= $i++ ?></td>
+                        <td><?= ucfirst($member->name); ?></td>
+                        <td><?= $member->email; ?></td>
+                        <td><?= $member->phone_num; ?></td>
+                        <td><?= $member->message?></td>
                     </tr>
-                    <tr class="gradeC">
-                        <td>Misc</td>
-                        <td>PSP browser</td>
-                        <td>PSP</td>
-                        <td class="center">-</td>
-                        <td class="center">C</td>
-                    </tr>
-                    <tr class="gradeU">
-                        <td>Other browsers</td>
-                        <td>All others</td>
-                        <td>-</td>
-                        <td class="center">-</td>
-                        <td class="center">U</td>
-                    </tr>
+                    <?php endforeach; endif;  ?>
                 </tbody>
             </table>
         </div>

@@ -8,7 +8,7 @@
 			 	<form  class="form-horizontal" action="<?= base_url();?>about_us/update" method="POST" >
 	                <div class="form-group">
 	                    <div class="col-sm-12 controls">
-	                        <textarea id="wysiwyghtml" class="width-100 form-control"  rows="15" placeholder="Write your message here"></textarea>
+	                        <textarea id="wysiwyghtml" name="about_us" required class="width-100 form-control"  rows="15" placeholder="Write your message here"><?php if($about_us && isset($about_us)){echo $about_us->value; }?></textarea>
 	                    </div>
 	                </div>
 

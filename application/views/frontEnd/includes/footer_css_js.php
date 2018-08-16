@@ -3,15 +3,14 @@
 	<script type="text/javascript" src="<?= base_url();?>libs/frontEnd/js/jquery-2.1.4.min.js"></script>
 
 	<script type="text/javascript" src="<?= base_url();?>libs/frontEnd/js/bootstrap-3.1.1.min.js"></script>
-	
-	<!-- stats -->
+		<!-- stats -->
 	<script src="<?= base_url();?>libs/frontEnd/js/jquery.waypoints.min.js"></script>
 	<script src="<?= base_url();?>libs/frontEnd/js/jquery.countup.js"></script>
 	<script>
 		$('.counter').countUp();
 	</script>
 	<!-- //stats -->
-
+ 
 	<!-- owl carousel -->
 	<script src="<?= base_url();?>libs/frontEnd/js/owl.carousel.js"></script>
 	<script>
@@ -103,4 +102,110 @@
 	
 	<!-- smooth scrolling js -->
 	<script src="<?= base_url();?>libs/frontEnd/js/SmoothScroll.min.js"></script>
-	<!-- //smooth scrolling js -->
+	
+<!-- For Fancy Box -->
+<script type="text/javascript" src="<?php echo base_url()?>libs/backEnd/fancyBox/js/jquery.fancybox.js?v=2.1.5"></script>
+
+<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>libs/backEnd/fancyBox/css/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        $('.fancybox').fancybox({
+
+        padding: 0,
+
+            openEffect : 'elastic',
+
+            openSpeed  : 150,
+
+            closeEffect : 'elastic',
+
+            closeSpeed  : 150,
+
+            maxWidth    : "90%",
+
+            autoSize    : true,
+
+            autoScale   : true,
+
+            fitToView   : true,
+
+            helpers : {
+
+                title : {
+
+                    type : 'inside'
+
+                },
+
+                overlay : {
+
+                    css : {
+
+                        'background' : 'rgba(0,0,0,0.3)'
+
+                    }
+
+                }
+
+            }       
+
+        });
+
+        $('.fancyboxview').fancybox({
+
+        padding: 0,
+
+            openEffect : 'elastic',
+
+            openSpeed  : 150,
+
+
+
+            closeEffect : 'elastic',
+
+            closeSpeed  : 150,
+
+            maxWidth    : "95%",
+
+            autoSize    : true,
+
+            autoScale   : true,
+
+            fitToView   : true,
+
+
+
+            helpers : {
+
+                title : {
+
+                    type : 'inside'
+
+                },
+
+                overlay : {
+
+                    css : {
+
+                        'background' : 'rgba(0,0,0,0.3)'
+
+                    }
+
+                }
+
+            }       
+
+        });
+
+    });    
+
+</script>
+
+
+
+
+
+

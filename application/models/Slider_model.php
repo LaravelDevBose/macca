@@ -10,6 +10,14 @@ Class Slider_model extends CI_Model{
 		if($result): return $result; else: return FALSE; endif;
 	}
 
+	//======= Get all Slider Information
+	public function get_banner_data()
+	{
+		$result = $this->db->order_by('id', 'desc')->limit(1)->get('sliders')->row();
+
+		if($result): return $result; else: return FALSE; endif;
+	}
+
 	//======== Store Slider Image Information
 	public function slider_image_insert()
 	{
@@ -32,7 +40,7 @@ Class Slider_model extends CI_Model{
 	{
 		
 		$image = $this->db->where('id', $id)->get('sliders')->row();
-		$this->db->where('id', $id);
+		$this->db->where('id', $id); 
 		$this->db->delete('sliders');
 
 		if($this->db->affected_rows()){
@@ -79,9 +87,9 @@ Class Slider_model extends CI_Model{
 		 $configSize1['source_image'] 	 = $sourse;
 		 $configSize1['create_thumb']    = FALSE;
 		 $configSize1['maintain_ratio']  = FALSE;
-		 $configSize1['width']           = 1920;
+		 $configSize1['width']           = 1600;
 		 $config['quality']   			 = '100';
-		 $configSize1['height']          = 650;
+		 $configSize1['height']          = 800;
 		 $configSize1['new_image'] 		 = 'libs/upload_pic/slider_image/';
 
 		 $this->image_lib->initialize($configSize1);
