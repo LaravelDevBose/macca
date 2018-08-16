@@ -179,10 +179,10 @@ Class Page_model extends CI_Model{
 
 	public function insert_video_path()
 	{
-		$attr = [
+		$attr = array(
 			'v_type' => 'y',
 			'video_link' => $this->input->post('video_link')
-		];
+		);
 
 		$insert = $this->db->insert('videos', $attr);
 

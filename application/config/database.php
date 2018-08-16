@@ -7,9 +7,15 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'macca_db',
+// 	'username' => 'root',
+// 	'password' => '',
+// 	'database' => 'macca_db',
+
+    'username' => 'maccadigitala_web',
+	'password' => 'EIbPNfDu&mXZ',
+	'database' => 'maccadigitala_web',
+	
+	
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

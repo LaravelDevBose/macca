@@ -1,0 +1,8 @@
+[16-Aug-2018 12:31:55 Asia/Dhaka] PHP Parse error:  syntax error, unexpected '[' in /home/maccadigitala/public_html/application/models/Admin_model.php on line 107
+[16-Aug-2018 12:33:00 Asia/Dhaka] PHP Parse error:  syntax error, unexpected '[' in /home/maccadigitala/public_html/application/models/Admin_model.php on line 161
+[16-Aug-2018 12:33:02 Asia/Dhaka] PHP Parse error:  syntax error, unexpected '[' in /home/maccadigitala/public_html/application/models/Admin_model.php on line 161
+[16-Aug-2018 12:33:25 Asia/Dhaka] PHP Parse error:  syntax error, unexpected '[' in /home/maccadigitala/public_html/application/models/Admin_model.php on line 214
+[16-Aug-2018 12:33:50 Asia/Dhaka] PHP Parse error:  syntax error, unexpected '[' in /home/maccadigitala/public_html/application/models/Gallary_model.php on line 31
+[16-Aug-2018 12:34:34 Asia/Dhaka] PHP Parse error:  syntax error, unexpected '[' in /home/maccadigitala/public_html/application/models/Page_model.php on line 182
+[16-Aug-2018 12:35:20 Asia/Dhaka] PHP Parse error:  syntax error, unexpected '[' in /home/maccadigitala/public_html/application/models/Slider_model.php on line 29
+[16-Aug-2018 12:35:58 Asia/Dhaka] PHP Parse error:  syntax error, unexpected '[' in /home/maccadigitala/public_html/application/models/Material_model.php on line 31
